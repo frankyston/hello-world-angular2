@@ -1,0 +1,5 @@
+<form name="contatoForm">
+  <input class="form-control" type="text" name="name" placeholder="Nome" ng-required="true" ng-minlength="10" [(ngModel)]="contact.name"/>
+  <input class="form-control" type="text" name="fone" placeholder="Telefone" [(ngModel)]="contact.fone" pattern="/^\d{4,5}-\d{4}$/" />
+</form>
+<button class="btn btn-primary btn-block" (click)="onsaveContact()" >Adicionar Contato</button>

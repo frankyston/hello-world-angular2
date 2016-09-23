@@ -1,3 +1,10 @@
-<h1>
-  {{title}}
-</h1>
+
+<div class="jumbotron">
+  <h3>{{title}}</h3>
+  <list-contact [contacts]="contacts"></list-contact>
+  <hr/>
+  <form-contact (outputContact)="pushContact($event)"></form-contact>
+</div>
+<div style="text-align: center;">
+  Criado por Envixo
+</div>
