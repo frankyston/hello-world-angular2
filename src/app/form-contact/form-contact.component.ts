@@ -1,4 +1,5 @@
 import { Component, EventEmitter } from '@angular/core';
+import {Contact} from '../contact';
 
 @Component({
   moduleId: module.id,
@@ -9,14 +10,17 @@ import { Component, EventEmitter } from '@angular/core';
 })
 export class FormContactComponent {
   outputContact = new EventEmitter();
-  contact: any = {};
+  contact: Contact = new Contact();
   constructor() {
-    this.contact.name = "";
-    this.contact.fone = "";
   }
 
   onsaveContact(){
-    this.outputContact.next(this.contact);
+    if (this.contact.name == "" && this.contact.fone == "") {
+      alert("Nome e telefone são obrigatórios");
+    }else{
+      this.outputContact.next(this.contact);
+      this.contact = new Contact();
+    }
   }
 
 }
